@@ -98,6 +98,7 @@ def get_html_table(Name):
     # methane data, the url is
     # https://webbook.nist.gov/cgi/cbook.cgi?Name=methane&Mask=4.
     url = str.format('https://webbook.nist.gov/cgi/cbook.cgi?Name={0}&Mask=4', Name.lower())
+    print("url=", url)
 
     # Function to get the request made, see below.
     raw_html = get_response(url)
@@ -145,3 +146,38 @@ def is_good_response(resp):
     return (resp.status_code == 200 
             and content_type is not None 
             and content_type.find('html') > -1)        
+
+
+def main():
+    # Name = "water"
+    # Temperature = 303
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    # Name = "methanol"
+    # Temperature = 303
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    # Name = "ethanol"
+    # Temperature = 303
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    # Name = "propanol"
+    # Temperature = 303
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    # Name = "butanol"
+    # Temperature = 303
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    # Name = "pentanol"
+    # Temperature = 363
+    # P = get_antoine_coef(Name, Temperature)
+    # print(P)
+    Name = "octane"
+    Temperature = 363
+    P = get_antoine_coef(Name, Temperature)
+    print(P)
+
+
+if __name__ == '__main__':
+    main()

@@ -4,3 +4,5 @@ _pychache_/
 *.log
 others/
 docs.md
+.idea/
+venv/
